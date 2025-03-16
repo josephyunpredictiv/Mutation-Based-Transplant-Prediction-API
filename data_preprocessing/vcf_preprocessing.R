@@ -5,6 +5,18 @@ sample2_path<-args[2]
 unimportant_path<-args[3]
 file_path<-args[4]
 
+required_packages <- c("dplyr", "readxl")
+
+# Install missing packages
+install_if_missing <- function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg, repos = "http://cran.rstudio.com/")
+  }
+}
+
+# Install all missing packages
+invisible(sapply(required_packages, install_if_missing))
+
 library(dplyr)
 library(readxl)
 
