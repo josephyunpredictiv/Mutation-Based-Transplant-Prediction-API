@@ -15,6 +15,11 @@ A Flask-based API for **uploading genetic data files** and **predicting prognosi
 
 ## 📦 Installation & Setup
 
+### Install Python and R
+- **Download and install Python (>= 3.8)**: [Python Official Site](https://www.python.org/downloads/)
+- **Download and install R (>= 4.0.0)**: [R Project Official Site](https://cran.r-project.org/)
+- **Ensure `pip` is installed**: Run `python -m ensurepip --default-pip`
+
 ### **1️⃣ Clone the Repository**
 ```sh
 git clone https://github.com/josephyunpredictiv/Mutation-Based-Transplant-Prediction-API.git
