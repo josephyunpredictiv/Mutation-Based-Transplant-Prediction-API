@@ -18,7 +18,7 @@ A Flask-based API for **uploading genetic data files** and **predicting prognosi
 ### **1️⃣ Clone the Repository**
 ```sh
 git clone https://github.com/josephyunpredictiv/Mutation-Based-Transplant-Prediction-API.git
-cd mutation_based_AI_API
+cd Mutation-Based-Transplant-Prediction-API
 ```
 
 ### **2️⃣ Set Up a Virtual Environment**
