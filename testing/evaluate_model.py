@@ -121,7 +121,9 @@ def evaluate_model(model_file_path, testing_data_file_path, pair_id='pair'):
       position_tensor.unsqueeze(1), zygosity_tensor.unsqueeze(1), allele_freq_tensor
   ], dim=1)
 
-  model = PrognosisNN(6615, 812, 24, 9, 5, 5)
+  num_gene = max(max(testing_data["Gene_Index"]), len(gene_to_index))
+  num_disease = max(max(testing_data["Disease_Index"]), len(disease_to_index))
+  model = PrognosisNN(num_gene, num_disease, 24, 9, 5, 5)
   model.load_state_dict(torch.load(model_file_path, weights_only=True))
   model.eval() 
 
@@ -148,7 +150,6 @@ def evaluate_model(model_file_path, testing_data_file_path, pair_id='pair'):
       predictions = model(gene_t, disease_t, chrom_t, variant_t, ref_t, mut_t, aa_orig_t, aa_mut_t, pos_t, zyg_t, allele_t)
 
   # Convert probabilities to binary labels
-  #pred_labels = (predictions.cpu().numpy().flatten() >= 0.5).astype(int)
   pred_labels = predictions.cpu().numpy().flatten()
 
   # Convert predictions to DataFrame
