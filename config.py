@@ -5,7 +5,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 # Neural Network Path
-model_path = BASE_DIR / "artifacts/prognosis_model_biochemical_amino_acids.pth"
+#model_path_old = BASE_DIR / "artifacts/prognosis_model_biochemical_amino_acids.pth"
+model_path = BASE_DIR / "artifacts/prognosis_model_biochemical_amino_acids_unknown_token.pth"
 
 # R Preprocessing Script Path
 R_path = BASE_DIR / "data_preprocessing/vcf_preprocessing.R"
